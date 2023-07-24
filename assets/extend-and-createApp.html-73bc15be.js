@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as n,b as o}from"./app-a6fcb359.js";const c={},r=o("p",null,"编写中。。。。",-1),_=[r];function s(a,d){return t(),n("div",null,_)}const f=e(c,[["render",s],["__file","extend-and-createApp.html.vue"]]);export{f as default};
