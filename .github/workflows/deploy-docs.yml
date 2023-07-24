@@ -33,6 +33,8 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
+          cache-dependency-path: '**/pnpm-lock.yaml'
+
 
 
       - name: 构建文档
