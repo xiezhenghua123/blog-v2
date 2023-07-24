@@ -13,6 +13,5 @@ isOriginal: true
 
 vue2+vue3、ts、H5、可视化大屏
 
-#### 联系方式
+![logo](.vuepress\public\mmqrcode1624774513792.png)
 
-![mmqrcode1624774513792](../../../blog/docs/.vuepress/public/mmqrcode1624774513792-16901657882521.png)
