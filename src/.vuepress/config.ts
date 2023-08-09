@@ -1,15 +1,19 @@
-import { defineUserConfig } from "vuepress";
-import theme from "./theme.js";
+import { defineUserConfig } from 'vuepress'
+import theme from './theme.js'
+import path from 'path'
 
 export default defineUserConfig({
-  base: "/blog-v2/",
+  base: '/blog-v2/',
 
-  lang: "zh-CN",
+  lang: 'zh-CN',
   // title: "博客演示",
   // description: "vuepress-theme-hope 的博客演示",
-
+  alias: {
+    '@public': path.resolve(__dirname, './public'),
+    '@components': path.resolve(__dirname, './components')
+  },
   theme,
 
   // Enable it with pwa
-  shouldPrefetch: false,
-});
+  shouldPrefetch: false
+})

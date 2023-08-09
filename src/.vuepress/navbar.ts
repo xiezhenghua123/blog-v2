@@ -21,7 +21,7 @@ export default navbar([
     text: 'vue',
     prefix: '/article/vue/',
     icon: 'Vue',
-    children: ['responsive', 'extend-and-createApp']
+    children: ['responsive', 'function-component']
   },
   {
     text: '面经',
