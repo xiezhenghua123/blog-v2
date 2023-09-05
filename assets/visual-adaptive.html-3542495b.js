@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as o,b as s}from"./app-13b6800d.js";const a={},c=s("p",null,"编写中。。。。",-1),_=[c];function n(r,l){return t(),o("div",null,_)}const f=e(a,[["render",n],["__file","visual-adaptive.html.vue"]]);export{f as default};
