@@ -14,7 +14,7 @@ isOriginal: true
 
 - **1.`JavaScript`规定了几种语言类型**
 
-八种语言类型，其中包括基本数据类型六种：Number，String，Null，Undefined，Boolean，Symbol、BigInt；复杂数据类型 1 种：Object（Array，function 等都是 Object 类型）
+八种语言类型，其中包括基本数据类型七种：Number，String，Null，Undefined，Boolean，Symbol、BigInt；复杂数据类型 1 种：Object（Array，function 等都是 Object 类型）
 
 - **2.`JavaScript`对象的底层数据结构是什么**
 
@@ -108,7 +108,7 @@ isOriginal: true
 
 基本数据类型存储在栈中，数据内存大小确定，并由系统自动分配和自动释放。这样带来的好处就是，内存可以及时得到回收，相对于堆来说 ，更加容易管理内存空间。
 
-复杂数据类型包括内存指针和实际内存，其内存指针存储在堆中，实际内存存储在栈中，当需要使用复杂类型时，先从堆中找到内存指针，通过指针找到栈中的内存。当我们对复杂数据类型变量进行直接浅拷贝时，拷贝的只是其引用指针。
+复杂数据类型包括内存指针和实际内存，其内存指针存储在栈中，实际内存存储在堆中，当需要使用复杂类型时，先从栈中找到内存指针，通过指针找到堆中的内存。当我们对复杂数据类型变量进行直接浅拷贝时，拷贝的只是其引用指针。
 
 - **5.基本类型对应的内置对象，以及他们之间的装箱拆箱操作**
 
@@ -517,9 +517,9 @@ a()(2) //1 2
 
 （4）es6模块化
 
-定义模块：①export default 默认导出  ②export {}后面只能跟对象
+定义模块：①export default 默认导出  ②export 单独导出
 
-加载：import '...' from '...'。第二种导出方法，引入时必须的形式：import {...} from '...'
+加载：import '...' from '...'。
 
 ### 执行机制
 
@@ -588,7 +588,7 @@ const serialPromises = function (promises) {
 - **3.元信息类标签(`head`、`title`、`meta`)的使用目的和配置方法**
 - **4.`HTML5`离线缓存原理**
 
-使用：头部加上<!DOCTYPE HTML> <html manifest = "cache.manifest"> ... </html>
+使用：头部html标签加上manifest = "cache.manifest"
 
 cache.manifest文件构成：
 
@@ -604,9 +604,9 @@ cache.manifest文件构成：
 
 - **1.`CSS`盒模型，在不同浏览器的差异**
 
-标准盒模型：box-sizing:content-box(盒子的宽和高不包括不包括pading和border)
+标准盒模型：box-sizing:content-box(盒子的宽和不包括pading和border)
 
-ie盒模型：box-sizing:border-box(盒子的宽和高不包括不包括pading和border)
+ie盒模型：box-sizing:border-box(盒子的宽和高包括pading和border)
 
 - **2.`CSS`所有选择器及其优先级、使用场景，哪些可以继承，如何运用`at`规则**
 
@@ -750,7 +750,7 @@ at（@）规则：
       width: 200px;
       height: 200px;
       text-align: center;
-      line-height: 200px;css
+      line-height: 200px;
       background-color: blanchedalmond;
     }
 ```
@@ -859,6 +859,7 @@ return {
 ```css
 width：100px;
 height:100px;
+border-radius: 50%;
 ```
 
 ②三角形：
