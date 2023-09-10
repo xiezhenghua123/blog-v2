@@ -49,7 +49,8 @@ export default navbar([
       'compositionApi',
       'flex',
       'slide-to-load',
-      'visual-adaptive'
+      'visual-adaptive',
+      'git-proxy'
     ]
   },
   {

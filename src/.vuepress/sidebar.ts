@@ -37,5 +37,11 @@ export default sidebar({
       text: '日常开发踩坑',
       children: 'structure'
     }
-  ]
+  ],
+  '/article/typescript/': [
+   {
+     text: 'ts学习',
+     children: 'structure'
+   }
+ ]
 })

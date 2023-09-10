@@ -1,12 +1,10 @@
 ---
 author: 菜鸡小谢
-date: 2023/09/10
+date: 2023-09-10
 category: typescript
-tag: Array
 title: ts体操练习
 isOriginal: true
 ---
-
 ### 前言
 
 typescript类型体操练习，用于学习ts。
@@ -51,4 +49,3 @@ const todo: TodoPreview = {
  completed: false,
 }
 ```
-
