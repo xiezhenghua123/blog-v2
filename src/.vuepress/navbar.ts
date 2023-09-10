@@ -51,5 +51,11 @@ export default navbar([
       'slide-to-load',
       'visual-adaptive'
     ]
+  },
+  {
+    text: 'TypeScript',
+    prefix: '/article/typescript/',
+    icon: 'typescript',
+    children: ['gymnastics-practice']
   }
 ])
