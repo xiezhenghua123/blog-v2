@@ -105,7 +105,82 @@ const instance = SimpleVue({
     }
   }
 })
-
 ```
 
 [ThisType](https://jkchao.github.io/typescript-book-chinese/typings/thisType.html)
+
+**ReadOny**
+
+```typescript
+interface Todo {
+ title: string
+ description: string
+}
+
+const todo: MyReadonly<Todo> = {
+ title: "Hey",
+ description: "foobar"
+}
+
+type MyReadonly<T> = {
+  readonly [K in keyof T]: T[K]
+}
+
+todo.title = "Hello" // Error: cannot reassign a readonly property
+todo.description = "barFoo" // Error: cannot reassign a readonly property
+```
+
+**pick-to-readonly**
+
+```typescript
+interface Todo {
+  title: string
+  description: string
+  completed: boolean
+}
+
+const todo: MyReadonly2<Todo, 'title' | 'description'> = {
+  title: 'Hey',
+  description: 'foobar',
+  completed: false
+}
+
+type MyReadonly2<T, K extends keyof T> = {
+  readonly [R in K]: T[R]
+} & {
+  [R in keyof T as R extends K ? never : R]: T[R]
+}
+
+todo.title = 'Hello' // Error: cannot reassign a readonly property
+todo.description = 'barFoo' // Error: cannot reassign a readonly property
+todo.completed = true // OK
+```
+
+**deep-readonly**
+
+```typescript
+type X = { 
+ x: { 
+   a: 1
+   b: 'hi'
+ }
+ y: 'hey',
+ z: Date
+}
+
+type Expected = { 
+ readonly x: { 
+   readonly a: 1
+   readonly b: 'hi'
+ }
+ readonly y: 'hey' 
+}
+
+// keyof T extends never 巧妙的判断了是否为对象
+type DeepReadonly<T> = keyof T extends never ? T : {
+ readonly [K in keyof T]: DeepReadonly<T[K]>
+}
+
+type Todo = DeepReadonly<X> // should be same as `Expected`
+```
+
