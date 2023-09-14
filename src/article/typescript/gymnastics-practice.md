@@ -82,7 +82,7 @@ type Keys = GetReadonlyKeys<Todo> // expected to be "title" | "description"
 
 ```typescript
 type SimpleVueProps<D, M, C> = {
-  data: () => D
+  data: (this: void) => D
   computed: C & ThisType<D>
   methods: M & ThisType<D & GetComputed<C> & M>
 }
@@ -152,7 +152,7 @@ const todo: MyReadonly2<Todo, 'title' | 'description'> = {
   completed: false
 }
 
-type MyReadonly2<T, K extends keyof T> = {
+type MyReadonly2<T, K extends keyof T = keyof T> = {
   readonly [R in K]: T[R]
 } & {
   [R in keyof T as R extends K ? never : R]: T[R]
@@ -209,5 +209,39 @@ type TupleToObject<T extends readonly (keyof any)[]> = {
     [P in T[number]]: P
 }
 type result = TupleToObject<typeof tuple> // expected { 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
+```
+
+**chainable-option**
+
+```typescript
+declare const a: Chainable
+
+
+// never是所有类型的子类型，never可以赋值给任何类型，但是没有类型可以赋值给never
+type Chainable<T = {}> = {
+ option: <K extends string, V>(
+   key: K extends keyof T ? never : K,
+   value: V
+ ) => K extends keyof T ? Chainable<Omit<T, K> & Record<K, V>>: Chainable<T & Record<K, V>>
+ get: () => T
+}
+
+const result1 = a
+  .option('foo', 123)
+  .option('bar', { value: 'Hello World' })
+  .option('name', 'type-challenges')
+  .get()
+```
+
+**first**
+
+```typescript
+type arr1 = ['a', 'b', 'c']
+type arr2 = [3, 2, 1]
+
+type First<T extends any[]> = T["length"] extends 0 ? never : T[0]
+
+type head1 = First<arr1> // expected to be 'a'
+type head2 = First<arr2> // expected to be 3
 ```
 
