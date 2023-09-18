@@ -245,3 +245,48 @@ type head1 = First<arr1> // expected to be 'a'
 type head2 = First<arr2> // expected to be 3
 ```
 
+**last**
+
+```typescript
+type arr1 = ['a', 'b', 'c']
+type arr2 = [3, 2, 1]
+
+type tail1 = Last<arr1> // expected to be 'c'
+type tail2 = Last<arr2> // expected to be 1
+
+type Last<T extends any[]> = T extends [...infer rest, infer A] ? A : never
+```
+
+**pop**
+
+```typescript
+type arr1 = ['a', 'b', 'c', 'd']
+type arr2 = [3, 2, 1]
+
+type Pop<T extends any[]> = T extends [...infer rest, infer _] ? rest : []
+
+type re1 = Pop<arr1> // expected to be ['a', 'b', 'c']
+type re2 = Pop<arr2> // expected to be [3, 2]
+```
+
+**length-of-tuple**
+
+```typescript
+type tesla = ['tesla', 'model 3', 'model X', 'model Y']
+type spaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT']
+
+type Length<T extends readonly any[]> = T["length"]
+
+type teslaLength = Length<tesla>  // expected 4
+type spaceXLength = Length<spaceX> // expected 5
+```
+
+**exclude**
+
+```typescript
+// 联合类型的遍历，利用三元表达式，所有的类型都会遍历一遍
+type MyExclude<T, U> = T extends U ? never : T
+
+type Result = MyExclude<'a' | 'b' | 'c', 'a'> // 'b' | 'c'
+```
+
