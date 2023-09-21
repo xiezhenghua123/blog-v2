@@ -290,3 +290,26 @@ type MyExclude<T, U> = T extends U ? never : T
 type Result = MyExclude<'a' | 'b' | 'c', 'a'> // 'b' | 'c'
 ```
 
+**awaited**
+
+```typescript
+type ExampleType = Promise<string>
+type Result = MyAwaited<ExampleType> // string
+
+// answer
+type IsLikePromise<T> = {
+ then: (onfulfilled: (arg: T) => any) => any
+}
+type MyAwaited<T extends IsLikePromise<any>> = T extends IsLikePromise<infer R> ? R extends IsLikePromise<any> ? MyAwaited<R> : R : never
+```
+
+**if**
+
+```typescript
+type A = If<true, 'a', 'b'>  // expected to be 'a'
+type B = If<false, 'a', 'b'> // expected to be 'b'
+
+// answer
+type If<C extends boolean, T, F> = C extends true ? T : F
+```
+
