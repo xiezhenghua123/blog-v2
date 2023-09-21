@@ -5,13 +5,13 @@ category: typescript
 title: ts体操练习
 isOriginal: true
 ---
-### 前言
+## 前言
 
 typescript类型体操练习，用于学习ts。
 
-### 题目
+## 题目
 
-**get-return-type**
+### **get-return-type**
 
 ```typescript
 const fn = (v: boolean,a:string) => {
@@ -29,7 +29,7 @@ type a = MyReturnType<typeof fn>
 
 [infer关键字介绍](https://jkchao.github.io/typescript-book-chinese/tips/infer.html#%E4%BB%8B%E7%BB%8D)
 
-**Omit**
+### **Omit**
 
 ```typescript
 interface Todo {
@@ -50,7 +50,7 @@ const todo: TodoPreview = {
 }
 ```
 
-**get-readonly-keys**
+### **get-readonly-keys**
 
 ```typescript
 interface Todo {
@@ -78,7 +78,7 @@ type GetReadonlyKeys<T> = keyof {
 type Keys = GetReadonlyKeys<Todo> // expected to be "title" | "description"
 ```
 
-**simple-vue**
+### **simple-vue**
 
 ```typescript
 type SimpleVueProps<D, M, C> = {
@@ -116,7 +116,7 @@ const instance = SimpleVue({
 
 [ThisType](https://jkchao.github.io/typescript-book-chinese/typings/thisType.html)
 
-**ReadOny**
+### **ReadOnly**
 
 ```typescript
 interface Todo {
@@ -137,7 +137,7 @@ todo.title = "Hello" // Error: cannot reassign a readonly property
 todo.description = "barFoo" // Error: cannot reassign a readonly property
 ```
 
-**pick-to-readonly**
+### **pick-to-readonly**
 
 ```typescript
 interface Todo {
@@ -163,7 +163,7 @@ todo.description = 'barFoo' // Error: cannot reassign a readonly property
 todo.completed = true // OK
 ```
 
-**deep-readonly**
+### **deep-readonly**
 
 ```typescript
 type X = { 
@@ -190,7 +190,7 @@ type DeepReadonly<T> = {
 type Todo = DeepReadonly<X> // should be same as `Expected`
 ```
 
-**tuple-to-union**
+### **tuple-to-union**
 
 ```typescript
 type Arr = ['1', '2', '3']
@@ -200,7 +200,7 @@ type TupleToUnion<T> = T extends (infer U)[] ? U : never
 type Test = TupleToUnion<Arr> // expected to be '1' | '2' | '3'
 ```
 
-**tuple-to-object**
+### **tuple-to-object**
 
 ```typescript
 const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
@@ -211,7 +211,7 @@ type TupleToObject<T extends readonly (keyof any)[]> = {
 type result = TupleToObject<typeof tuple> // expected { 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
 ```
 
-**chainable-option**
+### **chainable-option**
 
 ```typescript
 declare const a: Chainable
@@ -233,7 +233,7 @@ const result1 = a
   .get()
 ```
 
-**first**
+### **first**
 
 ```typescript
 type arr1 = ['a', 'b', 'c']
@@ -245,7 +245,7 @@ type head1 = First<arr1> // expected to be 'a'
 type head2 = First<arr2> // expected to be 3
 ```
 
-**last**
+### **last**
 
 ```typescript
 type arr1 = ['a', 'b', 'c']
@@ -257,7 +257,7 @@ type tail2 = Last<arr2> // expected to be 1
 type Last<T extends any[]> = T extends [...infer rest, infer A] ? A : never
 ```
 
-**pop**
+### **pop**
 
 ```typescript
 type arr1 = ['a', 'b', 'c', 'd']
@@ -269,7 +269,7 @@ type re1 = Pop<arr1> // expected to be ['a', 'b', 'c']
 type re2 = Pop<arr2> // expected to be [3, 2]
 ```
 
-**length-of-tuple**
+### **length-of-tuple**
 
 ```typescript
 type tesla = ['tesla', 'model 3', 'model X', 'model Y']
@@ -281,7 +281,7 @@ type teslaLength = Length<tesla>  // expected 4
 type spaceXLength = Length<spaceX> // expected 5
 ```
 
-**exclude**
+### **exclude**
 
 ```typescript
 // 联合类型的遍历，利用三元表达式，所有的类型都会遍历一遍
@@ -290,7 +290,7 @@ type MyExclude<T, U> = T extends U ? never : T
 type Result = MyExclude<'a' | 'b' | 'c', 'a'> // 'b' | 'c'
 ```
 
-**awaited**
+### **awaited**
 
 ```typescript
 type ExampleType = Promise<string>
@@ -303,7 +303,7 @@ type IsLikePromise<T> = {
 type MyAwaited<T extends IsLikePromise<any>> = T extends IsLikePromise<infer R> ? R extends IsLikePromise<any> ? MyAwaited<R> : R : never
 ```
 
-**if**
+### **if**
 
 ```typescript
 type A = If<true, 'a', 'b'>  // expected to be 'a'
@@ -313,7 +313,7 @@ type B = If<false, 'a', 'b'> // expected to be 'b'
 type If<C extends boolean, T, F> = C extends true ? T : F
 ```
 
-**concat**
+### **concat**
 
 ```typescript
 type Result = Concat<[1], [2]> // expected to be [1, 2]
@@ -322,7 +322,7 @@ type Result = Concat<[1], [2]> // expected to be [1, 2]
 type Concat<T extends  any[], U extends any[]> = [...T, ...U]
 ```
 
-**includes**
+### **includes**
 
 ```typescript
 type isPillarMen = Includes<['Kars', 'Esidisi', 'Wamuu', 'Santana'], 'Dio'> // expected to be `false`
