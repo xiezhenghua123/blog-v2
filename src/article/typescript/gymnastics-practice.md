@@ -334,3 +334,29 @@ type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ?
 type Includes<T extends readonly any[], U> = T extends [infer F, ...infer L] ? Equal<F, U> extends true ? true : Includes<L, U> : false
 ```
 
+### **push**
+
+```typescript
+type Result = Push<[1, 2], '3'> // [1, 2, '3']
+// answer
+type Push<T extends any[], U> = [...T, U]
+```
+
+### **unshift**
+
+```typescript
+type Result = Unshift<[1, 2], 0> // [0, 1, 2,]
+// answer
+type Unshift<T extends any[], U> = [U, ...T]
+```
+
+### **parameters**
+
+```typescript
+const foo = (arg1: string, arg2: number): void => {}
+type FunctionParamsType = MyParameters<typeof foo> // [arg1: string, arg2: number]
+
+// answer
+type MyParameters<T extends (...args: any[]) => any> = T extends (...args: infer P)=> any ? P :never
+```
+
