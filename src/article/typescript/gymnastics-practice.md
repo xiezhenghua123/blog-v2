@@ -313,3 +313,24 @@ type B = If<false, 'a', 'b'> // expected to be 'b'
 type If<C extends boolean, T, F> = C extends true ? T : F
 ```
 
+**concat**
+
+```typescript
+type Result = Concat<[1], [2]> // expected to be [1, 2]
+
+// answer
+type Concat<T extends  any[], U extends any[]> = [...T, ...U]
+```
+
+**includes**
+
+```typescript
+type isPillarMen = Includes<['Kars', 'Esidisi', 'Wamuu', 'Santana'], 'Dio'> // expected to be `false`
+
+// answer
+type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ? 1 : 2
+  ? true
+  : false
+type Includes<T extends readonly any[], U> = T extends [infer F, ...infer L] ? Equal<F, U> extends true ? true : Includes<L, U> : false
+```
+
