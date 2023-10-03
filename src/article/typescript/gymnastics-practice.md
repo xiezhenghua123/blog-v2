@@ -65,8 +65,6 @@ type MyPick<T, R extends keyof T> = {
 }
 ```
 
-
-
 ### **get-readonly-keys**
 
 ```typescript
@@ -162,7 +160,6 @@ interface Todo {
   description: string
   completed: boolean
 }
-<<<<<<< HEAD
 // type MyPick<T, R extends keyof T> = {
 //   [Q in keyof T as Q extends R ? Q : never]: T[Q]
 // }
@@ -178,7 +175,6 @@ const todo: TodoPreview = {
   title: 'Clean room',
   completed: false
 }
-=======
 
 const todo: MyReadonly2<Todo, 'title' | 'description'> = {
   title: 'Hey',
@@ -214,12 +210,12 @@ type Expected = {
    readonly a: 1
    readonly b: 'hi'
  }
- readonly y: 'hey' 
+ readonly y: 'hey'
+ readonly z: Date 
 }
 
-type DeepReadonly<T> = {
- readonly [K in keyof T]: keyof T[K] extends never ? T[K] : DeepReadonly<T[K]>
-}
+type params = string | boolean | number | symbol | Function | Promise<any> | Date
+type DeepReadonly<T> = T extends params ? T : { readonly [k in keyof T]: DeepReadonly<T[k]> }
 
 type Todo = DeepReadonly<X> // should be same as `Expected`
 ```
@@ -392,5 +388,5 @@ type FunctionParamsType = MyParameters<typeof foo> // [arg1: string, arg2: numbe
 
 // answer
 type MyParameters<T extends (...args: any[]) => any> = T extends (...args: infer P)=> any ? P :never
->>>>>>> 57746f9186493531c650c9912517b5ae4da121b8
+
 ```
