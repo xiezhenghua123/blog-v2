@@ -390,3 +390,24 @@ type FunctionParamsType = MyParameters<typeof foo> // [arg1: string, arg2: numbe
 type MyParameters<T extends (...args: any[]) => any> = T extends (...args: infer P)=> any ? P :never
 
 ```
+
+### promise-all
+
+```typescript
+const promise1 = Promise.resolve(3);
+const promise2: number = 42;
+const promise3 = new Promise<string>((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+// expected to be `Promise<[number, number, string]>`
+// as const 可以固定类型，比如promise2不加: number，会被推断为42，而不是number。加了就是number
+const p = PromiseAll([promise1, promise2, promise3] as const)
+
+// answer 
+type Awaited<T> = T extends Promise<infer U> ? Awaited<U> :  T
+declare function PromiseAll<T extends any[]>(values: readonly [...T]): Promise<{
+ [P in keyof T]: Awaited<T[P]>
+}>
+```
+
