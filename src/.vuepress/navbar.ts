@@ -50,7 +50,8 @@ export default navbar([
       'flex',
       'slide-to-load',
       'visual-adaptive',
-      'git-proxy'
+      'git-proxy',
+      "video-audio"
     ]
   },
   {
