@@ -51,7 +51,8 @@ export default navbar([
       'slide-to-load',
       'visual-adaptive',
       'git-proxy',
-      "video-audio"
+      "video-audio",
+      "human-machine-verification",
     ]
   },
   {
