@@ -21,7 +21,7 @@ export default navbar([
     text: 'vue',
     prefix: '/article/vue/',
     icon: 'Vue',
-    children: ['responsive', 'function-component']
+    children: ['responsive', 'function-component', 'compositionApi']
   },
   {
     text: '面经',
@@ -42,11 +42,9 @@ export default navbar([
     children: [
       'el-menu',
       'forEachBad',
-      'refresh',
       'git',
       'uniapp',
       'webSocket',
-      'compositionApi',
       'flex',
       'slide-to-load',
       'visual-adaptive',
