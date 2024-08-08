@@ -5,12 +5,11 @@ category: javascript
 title: 关于上滑加载
 isOriginal: true
 ---
-
 ### 实现原理
 
 监听scroll事件，当scrollTop+clientHeight >= scrollHeight时，即已经滚动到列表底部，可以加载下一页数据。
 
-![image-20230717135957727](../../.vuepress/public/image-20230717135957727.png)
+![1723098446072](image/slide-to-load/1723098446072.png)
 
 ### 响应式问题
 
@@ -36,4 +35,3 @@ isOriginal: true
       }
     },
 ```
-

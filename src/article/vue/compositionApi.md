@@ -5,7 +5,6 @@ isOriginal: composition api
 title: composition api的使用
 original: true
 ---
-
 ### 前言
 
 看了挺久的vue3的组合式api，一直没有实际练习，终于找了个时间下手了，来总结一波。
@@ -52,7 +51,7 @@ vue2.7
 
 类似于element ui的简易版通知弹窗（直接函数调用，只能在上方）
 
-![image-20221031142928968](../../.vuepress/public/image-20221031142928968.png)
+![1723098529480](image/compositionApi/1723098529480.png)
 
 ### 代码逻辑
 
@@ -298,4 +297,3 @@ export default notify
     default: 0,
   },
 ```
-

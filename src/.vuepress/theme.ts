@@ -1,6 +1,7 @@
 import { hopeTheme } from 'vuepress-theme-hope'
-import navbar from './navbar.js'
-import sidebar from './sidebar.js'
+import navbar from './navbar.ts'
+import sidebar from './sidebar.ts'
+import path from 'path'
 
 export default hopeTheme({
   hostname: 'https://xiezhenghua123.github.io',
@@ -27,8 +28,8 @@ export default hopeTheme({
     description: '前端新人小菜鸡',
     intro: '/intro.html',
     medias: {
-      QQ: "tencent://message/?uin=1803493121",
-      Wechat: "https://weixin.qq.com/",
+      QQ: 'tencent://message/?uin=1803493121',
+      Wechat: 'https://weixin.qq.com/'
     },
     roundAvatar: true
   },
@@ -67,7 +68,6 @@ export default hopeTheme({
       gfm: true,
       imgLazyload: true,
       imgSize: true,
-      include: true,
       katex: true,
       mark: true,
       mermaid: true,

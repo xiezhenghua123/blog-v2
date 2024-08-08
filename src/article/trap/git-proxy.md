@@ -9,7 +9,7 @@ isOriginal: true
 
 平时开发过程中，当我们使用git拉取代码或者推送代码时，总是会遇到代理问题，如下截图所示：
 
-![image-20230910230820673](../../.vuepress/public/image-20230910230820673.png)
+![1723098194990](image/git-proxy/1723098194990.png)
 
 这是由于git config中设置的代理有问题
 
@@ -26,7 +26,7 @@ git config --global --unset https.proxy
 
 代码端口查看，以clash为例
 
-![image-20230910231327389](../../.vuepress/public/image-20230910231327389.png)
+![1723098205511](image/git-proxy/1723098205511.png)
 
 设置git代理
 

@@ -2,7 +2,6 @@
 icon: circle-info
 isOriginal: true
 ---
-
 # 个人介绍
 
 #### 基本信息
@@ -13,5 +12,4 @@ isOriginal: true
 
 vue2+vue3、ts、H5、可视化大屏
 
-![logo](.vuepress\public\mmqrcode1624774513792.png)
-
+![1723098673523](image/intro/1723098673523.png)

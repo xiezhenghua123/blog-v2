@@ -6,5 +6,4 @@ tag: DOM
 title: 红宝书第十五章-DOM扩展
 isOriginal: true
 ---
-
-![fiftenpng](../../.vuepress/public/screenshot/fiftenpng.png)
+![1723098048276](image/fifteen/1723098048276.png)

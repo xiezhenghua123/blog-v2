@@ -2,9 +2,6 @@
 article: false
 isOriginal: true
 ---
-
-
-
 # 微信请扫描：
 
-![mmqrcode1624774513792](../../.vuepress/public/screenshot/mmqrcode1624774513792-1625148031100.png)
+![1723098071106](image/weChat/1723098071106.png)

@@ -5,7 +5,6 @@ category: vue
 title: vue响应式原理
 isOriginal: true
 ---
-
 ### **前言**
 
 看了好久的vue响应式原理，一直没看懂，直到我最近看到了实习公司的一位同事写的一篇分享文章，然后结合vue技术揭秘，终于对它有一点点的感悟了。
@@ -14,9 +13,9 @@ isOriginal: true
 
 Vue响应式的核心是利用Object.defineProperty()这个方法进行数据劫持和观察者模式进行数据响应式的。Object.defineProperty()这个方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。具体用法如下：
 
-​      它有三个参数，第一个是object，它代表要定义属性的对象。；第二个是prop，它代表目标对象的属性值；第三个参数是descriptor，它代表要定义或修改的属性描述符。
+    它有三个参数，第一个是object，它代表要定义属性的对象。；第二个是prop，它代表目标对象的属性值；第三个参数是descriptor，它代表要定义或修改的属性描述符。
 
-​      响应式用法：
+    响应式用法：
 
 ```javascript
 const person = {}
@@ -65,11 +64,9 @@ wantCake.register(() => {'console.log("call sunny")'})
 wantCake.notify()
 ```
 
-
-
 ### **初始化**
 
-vue在初始化执行initState的时候，会对`props`、`methods`、`data`、`computed` 和 `wathcer` 等属性做初始化操作。
+vue在初始化执行initState的时候，会对 `props`、`methods`、`data`、`computed` 和 `wathcer` 等属性做初始化操作。
 
 ```javascript
 export function initState (vm: Component) {
@@ -242,11 +239,11 @@ class Watcher {
 
 **第一步：**组件初始化的时候，先给每一个Data属性都注册getter，setter，也就是reactive化。然后再new 一个自己的Watcher对象，此时watcher会立即调用组件的render函数去生成虚拟DOM。在调用render的时候，就会需要用到data的属性值，此时会触发getter函数，将当前的Watcher函数注册进sub里。
 
-![image-20210717225112267](../../.vuepress/public/screenshot/image-20210717225112267.png)
+![1723098567566](image/responsive/1723098567566.png)
 
 **第二步：**当data属性发生改变之后，会触发sitter，遍历sub里所有的watcher对象，通知它们去重新渲染组件。
 
-![image-20210717225239671](../../.vuepress/public/screenshot/image-20210717225239671.png)
+![1723098580509](image/responsive/1723098580509.png)
 
 **注意：vue对数组响应式是通过变异方法完成的，而且如果要对响应式对象添加新的属性，必须要用$set方法才能完成**
 
@@ -255,4 +252,3 @@ class Watcher {
 [vue技术揭秘](https://ustbhuangyi.github.io/vue-analysis/v2/reactive/)
 
 [最简化 VUE的响应式原理](https://zhuanlan.zhihu.com/p/88648401)
-

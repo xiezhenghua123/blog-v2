@@ -5,7 +5,6 @@ category: vuepress
 title: vuepress 搭配 vuepress-theme-hope 主题搭建个人博客经历
 isOriginal: true
 ---
-
 #### 初始化 vuepress
 
 ```bash
@@ -108,7 +107,7 @@ cd -
 
 github上需要操作的步骤：
 
-![](../../.vuepress/public/screenshot/image-20210627132848159.png)
+![1723098617303](image/firstStudy/1723098617303.png)
 
 完成以上步骤，博客就能访问了。
 
@@ -130,4 +129,3 @@ git add *
 git commit -m 'xxx'
 git push -f --set-upstream origin public #运行之后，以后就只要git push就行
 ```
-

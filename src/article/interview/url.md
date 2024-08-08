@@ -5,7 +5,6 @@ category: 面经
 title: 浏览器输入url到页面加载完成的全过程解析
 isOriginal: true
 ---
-
 ### **前言**
 
 这个问题是前端面试的一个经典问题，你吃透了它，基本能掌握前端的大部分知识，经过对这个问题长时间的探索，我终于稍微理解了它，不容易啊。
@@ -41,7 +40,7 @@ isOriginal: true
 
  如果同时存在 cache-control 和 Expires，浏览器总是优先使用 cache-control。
 
-![image-20210722153043670](../../.vuepress/public/screenshot/image-20210722153043670.png)
+![1723097923617](image/url/1723097923617.png)
 
 **协商缓存（需要）对应的 HTTP 两组字段**：If-since-modified 和 last-modified、if-none-match 和 Etag
 
@@ -49,7 +48,7 @@ isOriginal: true
 
  if-none-match 和 Etag：流程和上面的 last-modified 一样，只是 Etag 值是根据文件内容是否修改来进行判定，进行产生一个哈希字符串存在服务器的 Etag 中。
 
-![](../../.vuepress/public/screenshot/image-20210722153143708.png)
+![1723097947115](image/url/1723097947115.png)
 
 ### **DNS 解析**
 
@@ -64,7 +63,7 @@ isOriginal: true
 
 递归查询：本地DNS服务向根DNS服务器查询过程中，根DNS会向本地DNS服务器返回ip地址或者返回本地域名服务服务器下一步需要访问哪个DNS服务器的指示。
 
-![image-20210722153314307](../../.vuepress/public/screenshot/image-20210722153314307.png)
+![1723097966738](image/url/1723097966738.png)
 
 ### **TCP 三次握手建立连接**
 
@@ -82,7 +81,7 @@ isOriginal: true
 
 服务器在收到浏览器发送的 HTTP 请求之后，会将收到的 HTTP 报文封装成 HTTP 的 Request 对象，并通过不同的 Web 服务器进行处理，处理完的结果以 HTTP 的 Response 对象返回，主要包括状态码，响应头，响应报文三个部分。
 
-![image-20210722153424168](../../.vuepress/public/screenshot/image-20210722153424168.png)
+![1723097987255](image/url/1723097987255.png)
 
 ### **页面渲染**
 
@@ -91,16 +90,16 @@ isOriginal: true
 - 浏览器将获取的 HTML 文档解析成 DOM 树。
 - 处理 CSS 标记，构成层叠样式表模型 CSSOM(CSS Object Model)。
 - 将 DOM 和 CSSOM 合并为渲染树(`rendering tree`)，代表一系列将被渲染的对象。
-- 渲染树的每个元素包含的内容都是计算过的，它被称之为布局`layout`。浏览器使用一种流式处理的方法，只需要一次绘制操作就可以布局所有的元素。
-- 将渲染树的各个节点绘制到屏幕上，这一步被称为绘制`painting`。
+- 渲染树的每个元素包含的内容都是计算过的，它被称之为布局 `layout`。浏览器使用一种流式处理的方法，只需要一次绘制操作就可以布局所有的元素。
+- 将渲染树的各个节点绘制到屏幕上，这一步被称为绘制 `painting`。
 
-![image-20210722153451965](../../.vuepress/public/screenshot/image-20210722153451965.png)
+![1723098009612](image/url/1723098009612.png)
 
 需要注意的是，以上五个步骤并不一定一次性顺序完成，比如 DOM 或 CSSOM 被修改时，亦或是哪个过程会重复执行，这样才能计算出哪些像素需要在屏幕上进行重新渲染。
 
 在实际情况中，JavaScript 和 CSS 的某些操作往往会多次修改 DOM 或者 CSSOM，从而导致**重绘**和**重排**等性能问题，要尽量避免。
 
-**关于 js 阻塞：**JS 可以操作 DOM 来修改 DOM 结构，可以操作 CSSOM 来修改节点样式，这就导致了浏览器在遇到`<script>`标签时，DOM 构建将暂停，直至脚本完成执行，然后继续构建 DOM。如果脚本是外部的，会等待脚本下载完毕，再继续解析文档。现在可以在`script`标签上增加属性`defer`或者`async`。脚本解析会将脚本中改变 DOM 和 CSS 的地方分别解析出来，追加到 DOM 树和 CSSOM 规则树上。
+**关于 js 阻塞：**JS 可以操作 DOM 来修改 DOM 结构，可以操作 CSSOM 来修改节点样式，这就导致了浏览器在遇到 `<script>`标签时，DOM 构建将暂停，直至脚本完成执行，然后继续构建 DOM。如果脚本是外部的，会等待脚本下载完毕，再继续解析文档。现在可以在 `script`标签上增加属性 `defer`或者 `async`。脚本解析会将脚本中改变 DOM 和 CSS 的地方分别解析出来，追加到 DOM 树和 CSSOM 规则树上。
 
 ### **四次挥手，断开连接**
 

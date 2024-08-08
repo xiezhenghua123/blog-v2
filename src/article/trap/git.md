@@ -5,7 +5,6 @@ category: git
 title: 代码回滚的不同方式及其区别
 isOriginal: true
 ---
-
 ### **前言**
 
 日常开发中，git 是多人协作开发中必不可少的代码管理工具，有时候，我们难免会遇到提交了错误代码的情况需要 git 回滚。下面我就总结一下：
@@ -40,7 +39,7 @@ git revert HEAD^ 撤销前一次提交（命令同 git reset）
 
 所有的 merge 都会存在两个 commit，左边的是主分支的 commit，右边是合并分支 branch 的 commit
 
-![](../../.vuepress/public/screenshot/image-20211125151159849.png)
+![1723098387170](image/git/1723098387170.png)
 
 这时候我们需要保留 master 上的内容，revert 掉合并分支的内容,保留 master 上内容：git revert d3a8e8f59 或者 git revert -m 1 a4142311ee54758be528c6827aa31815d291f8e2（1 表示左边，2 表示右边），revert 之后，master 上面会产生一个新的 commit3
 
