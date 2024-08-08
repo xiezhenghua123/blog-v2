@@ -102,7 +102,6 @@ isOriginal: true
 因为Cloudflare Turnstile需要依赖于域名进行人机验证，所以需要单独将验证码页面单独部署到某一个域名
 
 ```html
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,7 +111,7 @@ isOriginal: true
   </head>
   <body>
     <div id="cf-code"></div>
-    <script src="http://dev-img.dressin.com/js/uniapp.js"></script>
+    <script src="http://dev-img.dressin.com/js/uniapp.js"></script> 
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
     <script type="text/javascript">
       document.addEventListener('plusready', function () {
@@ -133,4 +132,62 @@ isOriginal: true
     </script>
   </body>
 </html
+```
+
+**密钥获取位置**
+
+![1723100528718](image/human-machine-verification/1723100528718.png)
+
+[uniapp webview文档](https://zh.uniapp.dcloud.io/component/web-view.html#web-view)
+
+js封装代码
+
+```javascript
+// 创建webview验证码, 仅在APP-PLUS环境下有效
+
+const htmlPath = 'http://dev-img.dressin.com/html/safeCode.html'  //这里写部署的html地址
+
+class CreateTurnstile {
+ constructor(uniScope) {
+  this.$scope = uniScope
+  this.wv = this.create()
+ }
+
+ create() {
+  const wv = plus.webview.create('', this.createId(), {
+   background: 'transparent',
+   popGesture: 'none',
+   scrollIndicator: 'none',
+   scrollBounce: 'none',
+   bounce: 'none',
+   bounceBackground: '#ffffff',
+   top: '0px',
+   bottom: '0px',
+   left: '0px',
+   right: '0px',
+   // zindex: 9999
+  })  //具体样式可以自己调整
+  wv.loadURL(htmlPath)
+  const currentWebview = this.$scope.$getAppWebview()
+  currentWebview.append(wv)
+  return wv
+ }
+
+ show() {
+  this.wv.show()
+ }
+ hide() {
+  this.wv.hide()
+ }
+ destroy() {
+  this.wv.removeFromParent()
+  this.wv.close()
+  this.wv = null
+ }
+ createId() {
+  return `safeCode_${Date.now()}`
+ }
+}
+
+export default CreateTurnstile
 ```
