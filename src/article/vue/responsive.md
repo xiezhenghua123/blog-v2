@@ -233,7 +233,7 @@ class Watcher {
 
 在对象属性的数据改变之后，会触发sitter，从而执行sitter函数的逻辑，从而调用dep实例的notify方法，从而进行遍历调用sub中所有watcher的upadte方法进行视图更新。
 
-![image-20210717221736565](../../.vuepress/public/screenshot/image-20210717221736565.png)
+![1723102710161](image/responsive/1723102710161.png)
 
 ### **总结**
 

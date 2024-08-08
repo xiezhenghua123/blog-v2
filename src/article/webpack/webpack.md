@@ -5,8 +5,7 @@ category: webpack
 title: webpack学习
 isOriginal: true
 ---
-
-###  简介
+### 简介
 
 webpack是一个前端资源构建工具，一个静态模块打包器。
 
@@ -159,7 +158,4 @@ path.resolve(__dirname,'../src/loader/replaceLoader.js')中的"dirname"表示当
 
 2、文件指纹
 
-![image-20220903160123119](../../.vuepress\public\screenshot\image-20220903160123119.png)
-
-
-
+![1723102612691](image/webpack/1723102612691.png)
