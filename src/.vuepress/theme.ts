@@ -1,7 +1,6 @@
 import { hopeTheme } from 'vuepress-theme-hope'
 import navbar from './navbar.ts'
 import sidebar from './sidebar.ts'
-import path from 'path'
 
 export default hopeTheme({
   hostname: 'https://xiezhenghua123.github.io',
