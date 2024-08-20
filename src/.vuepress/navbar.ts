@@ -8,36 +8,36 @@ export default navbar([
   },
   {
     text: 'vuepress',
-    link: '/article/vuepress/firstStudy',
+    link: 'vuepress/firstStudy/',
     icon: 'Vue'
   },
   {
     text: 'js高级程序设计',
-    prefix: '/article/javascript/',
+    prefix: '/js高级程序设计/',
     icon: 'js',
     children: ['Array', 'fifteen']
   },
   {
     text: 'vue',
-    prefix: '/article/vue/',
+    prefix: '/vue/',
     icon: 'Vue',
     children: ['responsive', 'function-component', 'compositionApi']
   },
   {
     text: '面经',
-    prefix: '/article/interview/',
+    prefix: '/面经/',
     icon: 'interview',
     children: ['checkSelf', 'url']
   },
   {
     text: 'webpack相关',
-    prefix: '/article/webpack/',
+    prefix: '/webpack相关/',
     icon: 'webpack',
     children: ['webpack']
   },
   {
     text: '日常开发踩坑',
-    prefix: '/article/trap/',
+    prefix: '/日常开发踩坑/',
     icon: 'goumaixianjing',
     children: [
       'el-menu',
@@ -55,8 +55,8 @@ export default navbar([
     ]
   },
   {
-    text: 'TypeScript',
-    prefix: '/article/typescript/',
+    text: 'typescript',
+    prefix: '/typescript/',
     icon: 'typescript',
     children: ['gymnastics-practice']
   }

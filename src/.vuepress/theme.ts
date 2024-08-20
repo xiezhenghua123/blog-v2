@@ -1,6 +1,5 @@
 import { hopeTheme } from 'vuepress-theme-hope'
 import navbar from './navbar.ts'
-import sidebar from './sidebar.ts'
 
 export default hopeTheme({
   hostname: 'https://xiezhenghua123.github.io',
@@ -19,7 +18,7 @@ export default hopeTheme({
   navbar,
 
   // sidebar
-  sidebar,
+  sidebar: 'structure',
 
   displayFooter: true,
 
