@@ -51,6 +51,7 @@ export default navbar([
       'git-proxy',
       "video-audio",
       "human-machine-verification",
+      'web-lighthouse',
       "remove-console",
     ]
   },
