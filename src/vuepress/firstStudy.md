@@ -130,4 +130,4 @@ git commit -m 'xxx'
 git push -f --set-upstream origin public #运行之后，以后就只要git push就行
 ```
 
-博客发布流程已经换成github workflow + Github Pages
+博客发布流程已经换成Github Pages
