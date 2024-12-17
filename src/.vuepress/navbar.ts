@@ -59,6 +59,6 @@ export default navbar([
     text: 'typescript',
     prefix: '/typescript/',
     icon: 'typescript',
-    children: ['gymnastics-practice']
+    children: ['gymnastics-practice', 'common-error']
   }
 ])

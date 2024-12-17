@@ -5,7 +5,6 @@ category: flex
 title: 关于使用flex布局的一些思考
 isOriginal: true
 ---
-
 ### Flex布局是什么？
 
 Flex是Flexible Box的缩写，意为弹性布局，用来为盒状模型提供最大的灵活性。
@@ -36,7 +35,7 @@ flex布局中设置居中非常的简单。盒子只要设置为flex盒子（dis
 
 以前使用flex布局需要考虑兼容性，现在基本都兼容了，不需要考虑。
 
-2、子盒子使用flex-grow:1时，宽度或者高度**自动撑开**时超出剩余最大空间，需要将该盒子设置为width:0或者height:0才能正常显示。
+2、子盒子使用flex-grow:1时，宽度或者高度**自动撑开**时超出剩余最大空间，需要将该盒子设置为width:0或者height:0（**ios有兼容性，用min-height或者min-width**）才能正常显示。
 
 ```html
 <!DOCTYPE html>
@@ -77,4 +76,3 @@ flex布局中设置居中非常的简单。盒子只要设置为flex盒子（dis
 </body>
 </html>
 ```
-
