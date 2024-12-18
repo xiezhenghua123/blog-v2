@@ -1,1 +1,0 @@
-import{_ as o}from"./plugin-vue_export-helper-c27b6911.js";import{o as r,c as e}from"./app-54d2bc6d.js";const c={};function t(m,n){return r(),e("div")}const a=o(c,[["render",t],["__file","common-error.html.vue"]]);export{a as default};
