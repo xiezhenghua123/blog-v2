@@ -119,7 +119,6 @@ isOriginal: true
         console.log('plusready', wv.getURL())
       })
       document.addEventListener('UniAppJSBridgeReady', function () {
-        console.log(this)
         turnstile.ready(function () {
          turnstile.render('#cf-code', {
             sitekey: '站点的验证码密钥',
@@ -127,7 +126,7 @@ isOriginal: true
               console.log('cf-code', response)
             }
           })
-        })yaz
+        })
       })
     </script>
   </body>

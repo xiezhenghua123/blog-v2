@@ -53,6 +53,7 @@ export default navbar([
       "human-machine-verification",
       'web-lighthouse',
       "remove-console",
+      "uniapp-popup"
     ]
   },
   {

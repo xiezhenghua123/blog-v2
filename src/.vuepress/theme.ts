@@ -46,6 +46,11 @@ export default hopeTheme({
   plugins: {
     blog: true,
     copyright: true,
+    components: {
+     components: [
+      "VidStack"
+     ]
+    },
 
     // comment: {
     //   // You should generate and use your own comment service
