@@ -1,7 +1,7 @@
 ---
 author: 菜鸡小谢
 date: 2022-03-31
-category: 日常开发踩坑
+category: uniapp
 title: uniapp样式穿透问题
 isOriginal: true
 ---

@@ -121,4 +121,5 @@ uni.navigateTo({url: '/pages/my-popup/my-popup'})
 
 最终效果：
 
-<div style="width: 300px"><VidStack  src="/video/uniapp-popup/video.mp4" height="100%" /></div>
+<div style="width: 300px"><VidStack  :src="$withBase('/video/uniapp-popup/video.mp4')" height="100%" /></div>
+
