@@ -3,7 +3,7 @@ import theme from './theme.js'
 import path from 'path'
 
 export default defineUserConfig({
-  base: '/blog-v2/',
+  base: '/',
 
   lang: 'zh-CN',
   // title: "博客演示",
