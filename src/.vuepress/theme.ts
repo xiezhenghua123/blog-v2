@@ -2,7 +2,7 @@ import { hopeTheme } from 'vuepress-theme-hope'
 import navbar from './navbar.ts'
 
 export default hopeTheme({
-  hostname: 'https://xiezhenghua123.github.io',
+  hostname: 'https://blog-v2-git-vercel-xiezhenghuas-projects.vercel.app',
 
   author: {
     name: '菜鸡小谢'
