@@ -8,7 +8,7 @@ export default navbar([
   },
   {
     text: 'vuepress',
-    link: 'vuepress/firstStudy/',
+    link: 'vuepress/firstStudy.md',
     icon: 'Vue'
   },
   {
