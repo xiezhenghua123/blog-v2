@@ -8,7 +8,7 @@ export default navbar([
   },
   {
     text: 'vuepress',
-    link: 'vuepress/firstStudy/',
+    link: 'vuepress/firstStudy.md',
     icon: 'Vue'
   },
   {
@@ -54,7 +54,8 @@ export default navbar([
       'web-lighthouse',
       "remove-console",
       "uniapp-popup",
-      "count-down"
+      "count-down",
+      'mobile-move-back'
     ]
   },
   {

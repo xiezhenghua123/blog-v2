@@ -1,9 +1,10 @@
 import { defineUserConfig } from 'vuepress'
-import theme from './theme.js'
+import { viteBundler } from '@vuepress/bundler-vite'
+import theme from './theme'
 import path from 'path'
 
 export default defineUserConfig({
-  base: '/blog-v2/',
+  base: '/',
 
   lang: 'zh-CN',
   // title: "博客演示",
@@ -13,6 +14,13 @@ export default defineUserConfig({
     '@components': path.resolve(__dirname, './components')
   },
   theme,
+
+  // 使用 Vite bundler（版本匹配）
+  bundler: viteBundler({
+    viteOptions: {
+      // 基本的 Vite 配置
+    }
+  }),
 
   // Enable it with pwa
   shouldPrefetch: false

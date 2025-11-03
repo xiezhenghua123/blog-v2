@@ -1,6 +1,6 @@
 ---
 home: true
-layout: BlogHome
+layout: Blog
 bgImage: "/assets/home.jpg"
 icon: home
 title: 前端坎坷之路
