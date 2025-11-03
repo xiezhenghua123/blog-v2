@@ -54,7 +54,8 @@ export default navbar([
       'web-lighthouse',
       "remove-console",
       "uniapp-popup",
-      "count-down"
+      "count-down",
+      'mobile-move-back'
     ]
   },
   {
