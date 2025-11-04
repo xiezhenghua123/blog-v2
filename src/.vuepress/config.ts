@@ -4,7 +4,7 @@ import theme from './theme'
 import path from 'path'
 
 export default defineUserConfig({
-  base: '/',
+  base: '/blog-v2/',
 
   lang: 'zh-CN',
   // title: "博客演示",
