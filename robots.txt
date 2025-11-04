@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://blog-v2-git-vercel-xiezhenghuas-projects.vercel.app/sitemap.xml
+Sitemap: https://blog-v2-git-vercel-xiezhenghuas-projects.vercel.app/blog-v2/sitemap.xml
